@@ -169,11 +169,11 @@ doSomething = () => {
 
 ```js
 // Avoid
-const obj { a = 'a', b = 'b', c = 'c'}
+const obj = { a = 'a', b = 'b', c = 'c'}
 const newObj = Object.Assign({}, obj, { b = 'd'});
 
 // Correct
-const obj {
+const obj = {
     a = 'a',
     b = 'b',
     c = 'c'
@@ -283,24 +283,6 @@ const obj = { propertyA: 'a', propertyB: 'b', propertyC }
 
 
 
----
-## Do
-#### Use `PropertyDate.getDate()` for dates relative to the property.
-
-```js
-// Correct
-import PropertyDate from '../../utils/propertyDate';
-if (PropertyDate.getDate() >= '2018-07-20') {
-    return noRoomsAvailableVacancySign();
-}
-
-// Avoid
-if (moment().startOf('day') >= '2018-07-20') {
-    return noRoomsAvailableVacancySign();
-}
-```
-**Why**:  moment() will use the date in the user's location
-
 # React Guidelines
 ---
 [Back To Top](#markdown-header-javascript-react-and-unit-testing-coding-standards-and-naming-conventions)
@@ -396,19 +378,6 @@ class MyButton extends Component {
 
 **Why**:  Easy to find related files for a component and easy to relocate the component if needed.
 
----
-## Do
-#### use the following prefix for action types
-
-```js
-
-export const REQ_XYZ = 'REQ_XYZ';  //REQ for Request
-export const RCV_XYZ = 'RCV_XYZ';  //RCV for Receive
-export const CTH_XYZ = 'CTH_XYZ';  //CTH for Catch
-
-```
-
-**Why**:  This is the prefix that we use throughout the application.
 
 ---
 ## Do
@@ -421,59 +390,6 @@ export const CTH_XYZ = 'CTH_XYZ';  //CTH for Catch
     error: false,
     errorData: null
 }
-
-```
-
-**Why**:  we standardize on the state properties.
-
----
-## Do Not
-#### store the error into the state.data property
-
-```js
-// wrong
-import createState from '../utils/state';
-
-export default (state, action ) => {
-    swith(action.type) {
-        case 'CATCH_ERROR':
-            return createState(state, { data: action.payload });
-    }
-}
-
-// correct
-import createState from '../utils/state';
-
-export default (state, action ) => {
-    swith(action.type) {
-        case 'CATCH_ERROR':
-            return createState(state, { errorData: action.payload, data: null });
-    }
-}
-
-```
-
-**Why**:  error should be stored in errorData property and valid response should be stored in data property
-
----
-## Do
-#### use util/state.js in the reducer to create new state
-
-```js
-
-import createState from '../utils/state';
-
-export default (state, action ) => {
-    swith(action.type) {
-        case 'SomeType':
-            return createState(state, { errorData: null });
-    }
-}
-
-```
-
-**Why**:  This method will reduce the boilerplate code and provide logic
-to handle the error property correctly in your state
 
 
 ---

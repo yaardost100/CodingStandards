@@ -876,9 +876,7 @@ Convert all tabs to spaces.
 2) Click 'Edit > Advanced > Untabify Selected lines`
 
 
-##### Avoid mixing tabs and spaces. See screenshot below for example.
-![Avoid Mixing Tabs and Spaces]
-
+##### Avoid mixing tabs and spaces.
 **Why**: Readability in code reviews. The bitbucket compare tools do not handle alignment well when mixing `tabs` vs `spaces`.
 
 ## Do
