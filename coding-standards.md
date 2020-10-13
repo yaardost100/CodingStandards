@@ -865,23 +865,19 @@ public async Task BookingController_NoDeposit_Succeeds()
 ```
 Configure Visual Studio to use spaces for Sql files.
 
-In visual studio Click 'Debug > Options'
+In visual studio Click 'Debug > Options' > Text-Editor > T-SQL90 > Tabs > Select Insert Spaces > Tab Size 4
 
-```
 
-![Configure VS](images/visualStudioSettings.png)
 
 ```
 Convert all tabs to spaces.
 
 1) Select All (Ctrl+A)
 2) Click 'Edit > Advanced > Untabify Selected lines`
-```
-![Convert Tabs to Spaces](images/convertTabsToSpaces.png)
 
 
 ##### Avoid mixing tabs and spaces. See screenshot below for example.
-![Avoid Mixing Tabs and Spaces](images/mixedTabsAndSpaces.png)
+![Avoid Mixing Tabs and Spaces]
 
 **Why**: Readability in code reviews. The bitbucket compare tools do not handle alignment well when mixing `tabs` vs `spaces`.
 
