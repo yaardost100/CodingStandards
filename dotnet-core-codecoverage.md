@@ -11,7 +11,7 @@ Copy the following files the the root of the repo.
 
 1. scripts/AddCoverlet.ps1
 2. scripts/AddSonar.ps1
-3. scripts/innRoad.ruleset
+3. scripts/CleanCode.ruleset
 4. scripts/RunTestCoverage.ps1
 5. .editorconfig
 6. .gitignore

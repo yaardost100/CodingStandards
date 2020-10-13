@@ -504,7 +504,7 @@ string message = string.Empty;
 
 ---
 ## Do
-#### use `Enums` over `integers` for status and other `flags` throughout the application. Always check if one is available in the `innRoad.Data.Enums` namespace. Cast `Enum` to `int` only when absolutely required.
+#### use `Enums` over `integers` for status and other `flags` throughout the application.Cast `Enum` to `int` only when absolutely required.
 
 ```c
 // Avoid
@@ -982,16 +982,6 @@ AND RoomSetId = 1
 
 ```
 **Why**: Readability and easy to distinguish columns from keywords.
-
----
-# Service Layer Guidelines
-[Back To Top](#markdown-header-c-sql-and-unit-testing-coding-standards-and-naming-conventions)
-
-## Do
-#### enforce boundary rules for the classes defined in the innRoad.Data namespace. These classes should not be returned to the Controllers. 
-
-## Do
-#### define ViewModels in the innRoad.Api namespace when returning data to the Controllers.
 
 ## Do
 #### use the Linq .Select() extension method to project at most 3 properties
